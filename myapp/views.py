@@ -2,16 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import About, Education, Experience, Tool, Skill, Interest, Award
 
-# Create your views here.
-# def index(request):
-#     about = About.objects.all()
-#     return render(request, 'home.html', {'about': about})
-
-# class About(ListView):
-#     model = About
-#     context_object_name = 'abouts'
-#     template_name = 'index.html'
-
+# using the below mentioned class based view we're passing the models to one single template 'index.html'
 class About(ListView):
     context_object_name = 'abouts'
     template_name = 'index.html'
@@ -25,5 +16,4 @@ class About(ListView):
         context['skills'] = Skill.objects.all()
         context['interest'] = Interest.objects.all()
         context['awards'] = Award.objects.all()
-        # And so on for more models
         return context
