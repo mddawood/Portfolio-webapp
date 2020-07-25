@@ -38,3 +38,23 @@ class Tool(models.Model):
 
     def __str__(self):
         return self.name
+
+class Skill(models.Model):
+    name = models.CharField(max_length=20)
+    detail = models.CharField(max_length=70)
+
+    def __str__(self):
+        return self.name
+
+class Interest(models.Model):
+    int = models.TextField()
+
+    def __str__(self):
+        return self.int
+
+class Award(models.Model):
+    award_number = models.IntegerField(default=0)
+    description = models.TextField(default='some award')
+
+    def __str__(self):
+        return self.description

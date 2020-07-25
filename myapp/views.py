@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from .models import About, Education, Experience, Tool
+from .models import About, Education, Experience, Tool, Skill, Interest, Award
 
 # Create your views here.
 # def index(request):
@@ -22,5 +22,8 @@ class About(ListView):
         context['experiences'] = Experience.objects.all()
         context['educations'] = Education.objects.all()
         context['tools'] = Tool.objects.all()
+        context['skills'] = Skill.objects.all()
+        context['interest'] = Interest.objects.all()
+        context['awards'] = Award.objects.all()
         # And so on for more models
         return context
