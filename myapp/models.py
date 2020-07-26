@@ -3,7 +3,7 @@ from django.db import models
 class About(models.Model):
     fname = models.CharField(max_length=50)
     lname = models.CharField(max_length=50)
-    contact = models.IntegerField()
+    contact = models.CharField(max_length=50)
     email = models.EmailField(max_length=50)
     intro = models.TextField()
 
@@ -52,7 +52,6 @@ class Interest(models.Model):
         return self.int
 
 class Award(models.Model):
-    award_number = models.IntegerField(default=0)
     description = models.TextField(default='some award')
 
     def __str__(self):
